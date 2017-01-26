@@ -36,7 +36,7 @@ proc getIpInfo*(ip : string): GeoIpInfo =
     info.city = data["city"].str
     info.zipCode = data["zip_code"].str
     info.timeZone = data["time_zone"].str
-    info.latitude = formatBiggestFloat(data["latitude"].getFNum, format = ffDecimal, pre
+    info.latitude = formatBiggestFloat(data["latitude"].getFNum, format = ffDecimal)
     info.longitude = formatBiggestFloat(data["longitude"].getFNum)
     info.metroCode = intToStr(int(data["metro_code"].getNum))
     

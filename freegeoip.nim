@@ -11,9 +11,18 @@ import strutils
 
 
 type
-    GeoIpInfo* = tuple[ip : string, countryCode : string, countryName : string, regionCode : string, regionName : string,
-                       city : string, zipCode : string, timeZone : string, latitude : string, longitude : string,
-                       metroCode : string]
+    GeoIpInfo* = ref object
+        ip* : string
+        countryCode* : string
+        countryName* : string
+        regionCode* : string
+        regionName* : string
+        city* : string
+        zipCode* : string
+        timeZone* : string
+        latitude* : string
+        longitude* : string
+        metroCode* : string
 
 
 # Internal API link. Other instances of freegeoip can be used as well, as long as this

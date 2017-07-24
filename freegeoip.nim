@@ -33,7 +33,7 @@ const API_LINK = "http://www.freegeoip.net/json/"
 proc getIpInfo*(ip : string): GeoIpInfo = 
     ## Gets info for the specified IP or hostname.
     
-    var response : string = getContent(API_LINK & ip)
+    var response : string = newHttpClient().getContent(API_LINK & ip)
     var data : JsonNode = parseJson(response)
     
     var info : GeoIpInfo
